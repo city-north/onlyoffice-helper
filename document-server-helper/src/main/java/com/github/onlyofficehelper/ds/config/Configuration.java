@@ -13,11 +13,11 @@ public class Configuration {
     /**
      * The document section allows to change all the parameters pertaining to the document (title, url, file type, etc.).
      */
-    private Document document;
+    private Document document = new Document();
     /**
      * The editorConfig section allows to change the parameters pertaining to the editor interface: opening mode (viewer or editor), interface language, additional buttons, etc.).
      */
-    private Editor editor;
+    private Editor editor = new Editor();
     /**
      * Defines the document type to be opened: open a text document
      * (.doc, .docm, .docx, .dot, .dotm, .dotx, .epub, .fodt, .htm, .html, .mht, .odt, .ott, .pdf, .rtf, .txt, .djvu, .xps)
@@ -48,8 +48,15 @@ public class Configuration {
     private Configuration() {
     }
 
-    public static ConfigurationBuilder builder() {
-        return new ConfigurationBuilder();
+    /**
+     * build a Configuration with required parameters
+     *
+     * @param fileType fileType
+     * @param url      url to file
+     * @return a {@link Configuration} instance
+     */
+    public static ConfigurationBuilder builder(FileType fileType, String url) {
+        return new ConfigurationBuilder(fileType, url);
     }
 
     /**
@@ -61,8 +68,18 @@ public class Configuration {
      */
     public static class ConfigurationBuilder {
 
-        private Configuration configuration = new Configuration();
+        private Configuration configuration;
 
+        public ConfigurationBuilder(FileType fileType, String url) {
+            configuration = new Configuration();
+            configuration.document.setFileType(fileType.getValue());
+            configuration.document.setUrl(url);
+        }
+
+        public Configuration build(String callbackUrl) {
+            configuration.editor.setCallbackUrl(callbackUrl);
+            return configuration;
+        }
 
     }
 

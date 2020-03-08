@@ -10,6 +10,9 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>document-server-helper</module>
+        <module>spring-boot-starter-document-server-helper</module>
+        <module>spring-document-server-helper</module>
+        <module>demo</module>
     </modules>
 
 

@@ -3,9 +3,12 @@
 让 OnlyOffice 的 API 使用更加便捷
 
 ## 模块
-### DocumentServer
+### onlyoffice 核心模块
 
-- [document-server-helper](document-server-helper)  用于对 DocumentServer API 的 的封装 
-- [spring-boot-starter-document-server-helper](spring-boot-starter-document-server-helper)  springBoot documentServerHelper 的 starter
-- [spring-document-server-helper](spring-document-server-helper)  Spring 集成 documentServerHelper
-- [demo](demo)  集成实例
+- [onlyoffice-helper-core](onlyoffice-helper-core)  onlyoffice 核心模块
+
+
+###  onlyoffice 对接开源项目模块
+- [onlyoffice-helper-spring](onlyoffice-helper-spring)  Spring 集成 onlyoffice
+- [spring-boot-starter-onlyoffice-helper](spring-boot-starter-onlyoffice-helper)  springBoot onlyoffice 集成 的 starter
+

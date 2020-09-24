@@ -45,97 +45,66 @@ public class Configuration {
      */
     private String width;
 
-    private Configuration() {
-    }
-
-    /**
-     * build a Configuration with required parameters
-     *
-     * @param fileType fileType
-     * @param url      url to file
-     * @return a {@link Configuration} instance
-     */
-    public static ConfigurationBuilder builder(FileType fileType, String url) {
-        return new ConfigurationBuilder(fileType, url);
-    }
-
-    /**
-     * <p>
-     * Builds {@link Configuration} instances.
-     * </p>
-     *
-     * @author EricChen 2020/02/25 00:12
-     */
-    public static class ConfigurationBuilder {
-
-        private Configuration configuration;
-
-        public ConfigurationBuilder(FileType fileType, String url) {
-            configuration = new Configuration();
-            configuration.document.setFileType(fileType.getValue());
-            configuration.document.setUrl(url);
-        }
-
-        public Configuration build(String callbackUrl) {
-            configuration.editor.setCallbackUrl(callbackUrl);
-            return configuration;
-        }
-
-    }
-
     public Document getDocument() {
         return document;
     }
 
-    public void setDocument(Document document) {
+    public Configuration setDocument(Document document) {
         this.document = document;
+        return this;
     }
 
     public Editor getEditor() {
         return editor;
     }
 
-    public void setEditor(Editor editor) {
+    public Configuration setEditor(Editor editor) {
         this.editor = editor;
+        return this;
     }
 
     public String getDocumentType() {
         return documentType;
     }
 
-    public void setDocumentType(String documentType) {
+    public Configuration setDocumentType(String documentType) {
         this.documentType = documentType;
+        return this;
     }
 
     public String getHeight() {
         return height;
     }
 
-    public void setHeight(String height) {
+    public Configuration setHeight(String height) {
         this.height = height;
+        return this;
     }
 
     public String getToken() {
         return token;
     }
 
-    public void setToken(String token) {
+    public Configuration setToken(String token) {
         this.token = token;
+        return this;
     }
 
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public Configuration setType(String type) {
         this.type = type;
+        return this;
     }
 
     public String getWidth() {
         return width;
     }
 
-    public void setWidth(String width) {
+    public Configuration setWidth(String width) {
         this.width = width;
+        return this;
     }
 }

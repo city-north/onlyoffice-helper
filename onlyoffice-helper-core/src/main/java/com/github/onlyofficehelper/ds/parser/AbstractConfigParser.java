@@ -1,4 +1,4 @@
-package com.github.onlyofficehelper.ds.builder;
+package com.github.onlyofficehelper.ds.parser;
 
 import com.github.onlyofficehelper.ds.config.Configuration;
 import com.github.onlyofficehelper.exception.ParserException;

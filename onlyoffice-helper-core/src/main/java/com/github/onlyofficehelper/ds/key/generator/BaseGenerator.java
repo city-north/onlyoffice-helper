@@ -1,15 +1,17 @@
 package com.github.onlyofficehelper.ds.key.generator;
 
+import com.github.onlyofficehelper.ds.key.registry.KeyRegistrySupport;
+
 /**
  * <p>
- * description
+ * 基础
  * </p>
  *
  * @author EricChen 2020/09/24 18:03
  */
-public abstract class BasicGenerator implements KeyGenerator {
+public abstract class BaseGenerator extends KeyRegistrySupport<String> {
 
-    private static int MAX_KEY_LENGTH = 20;
+    private static final int MAX_KEY_LENGTH = 20;
 
     @Override
     public String generateKey() {

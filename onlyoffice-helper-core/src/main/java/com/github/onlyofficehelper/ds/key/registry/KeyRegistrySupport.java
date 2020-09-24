@@ -1,9 +1,11 @@
 package com.github.onlyofficehelper.ds.key.registry;
 
+
 import com.github.onlyofficehelper.ds.key.generator.KeyGenerator;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+
 
 /**
  * <p>
@@ -12,15 +14,9 @@ import java.util.concurrent.ConcurrentHashMap;
  *
  * @author EricChen 2020/09/24 12:36
  */
-public class InMemoryKeyRegistry<T> implements KeyRegistry<T> {
+public abstract class KeyRegistrySupport<T> implements KeyRegistry<T>, KeyGenerator {
 
     private final Map<T, String> documentKeyMap = new ConcurrentHashMap<>(64);
-    private KeyGenerator keyGenerator;
-
-
-    public InMemoryKeyRegistry(KeyGenerator keyGenerator) {
-        this.keyGenerator = keyGenerator;
-    }
 
     @Override
     public String getKey(T source) {
@@ -39,23 +35,14 @@ public class InMemoryKeyRegistry<T> implements KeyRegistry<T> {
 
     @Override
     public String register(T source) {
-        if (contains(source)) {
-            return getKey(source);
-        } else {
-            return documentKeyMap.put(source, keyGenerator.generateKey());
-        }
+        return documentKeyMap.putIfAbsent(source, generateKey());
     }
 
-    public Map<T, String> getDocumentKeyMap() {
-        return documentKeyMap;
-    }
-
-    public KeyGenerator getKeyGenerator() {
-        return keyGenerator;
-    }
-
-    public InMemoryKeyRegistry<T> setKeyGenerator(KeyGenerator keyGenerator) {
-        this.keyGenerator = keyGenerator;
-        return this;
-    }
+    /**
+     * 生成Key
+     *
+     * @return 生成key
+     */
+    @Override
+    public abstract String generateKey();
 }

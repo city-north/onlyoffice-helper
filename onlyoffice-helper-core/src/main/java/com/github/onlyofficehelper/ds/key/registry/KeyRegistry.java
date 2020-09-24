@@ -6,7 +6,7 @@ package com.github.onlyofficehelper.ds.key.registry;
  * </p>
  *
  * @author EricChen 2020/09/24 12:13
- * @see InMemoryKeyRegistry
+ * @see KeyRegistrySupport
  */
 public interface KeyRegistry<T> {
 

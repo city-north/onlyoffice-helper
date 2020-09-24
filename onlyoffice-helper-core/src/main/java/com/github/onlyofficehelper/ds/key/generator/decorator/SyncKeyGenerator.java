@@ -1,4 +1,6 @@
-package com.github.onlyofficehelper.ds.key.generator;
+package com.github.onlyofficehelper.ds.key.generator.decorator;
+
+import com.github.onlyofficehelper.ds.key.generator.KeyGenerator;
 
 /**
  * <p>

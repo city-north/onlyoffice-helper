@@ -1,4 +1,6 @@
-package com.github.onlyofficehelper.ds.key;
+package com.github.onlyofficehelper.ds.key.registry;
+
+import com.github.onlyofficehelper.ds.key.generator.KeyGenerator;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
@@ -44,11 +46,15 @@ public class InMemoryKeyRegistry<T> implements KeyRegistry<T> {
         }
     }
 
-    public KeyGenerator<T> getKeyGenerator() {
+    public Map<T, String> getDocumentKeyMap() {
+        return documentKeyMap;
+    }
+
+    public KeyGenerator getKeyGenerator() {
         return keyGenerator;
     }
 
-    public InMemoryKeyRegistry<T> setKeyGenerator(KeyGenerator<T> keyGenerator) {
+    public InMemoryKeyRegistry<T> setKeyGenerator(KeyGenerator keyGenerator) {
         this.keyGenerator = keyGenerator;
         return this;
     }

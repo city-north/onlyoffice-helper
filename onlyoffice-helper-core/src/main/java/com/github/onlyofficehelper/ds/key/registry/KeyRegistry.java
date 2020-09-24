@@ -1,4 +1,4 @@
-package com.github.onlyofficehelper.ds.key;
+package com.github.onlyofficehelper.ds.key.registry;
 
 /**
  * <p>

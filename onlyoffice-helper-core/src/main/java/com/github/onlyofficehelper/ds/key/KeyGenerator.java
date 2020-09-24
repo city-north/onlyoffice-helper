@@ -8,35 +8,19 @@ import com.github.onlyofficehelper.ds.config.Document;
  * </p>
  * 当文档被编辑或者保存时,应该生成一个新的key, 应该小于20字符 ,不同用户使用相同key打开,则认为是协调合作,
  * <p>
- * 在分布式系统中,如果要使用内存key,则负载均衡策略应该选择hash
+ * 在分布式系统中,如果要使用默认的基于内存key,则负载均衡策略推荐选择hash
  * </p>
  *
  * @author EricChen 2020/09/24 12:13
  * @see Document#setKey(String)
  * @see InMemoryKeyGenerator 基于内存的key生成器
  */
-public interface KeyGenerator<T> {
+public interface KeyGenerator {
     /**
      * 生成一个 新的 Document Key
      *
-     * @param source 产生源
      * @return Document Key
      */
-    String generateKey(T source);
+    String generateKey();
 
-    /**
-     * 重新获取key
-     *
-     * @param source 产生源
-     * @return Document Key
-     */
-    String retrieveKey(T source);
-
-    /**
-     * 删除一个 Document Key
-     *
-     * @param source 产生源
-     * @return 是否成功
-     */
-    boolean removeKey(T source);
 }

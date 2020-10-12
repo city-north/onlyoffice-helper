@@ -11,6 +11,15 @@ package com.github.onlyofficehelper.ds.config;
 public class Configuration {
 
     /**
+     * documentServer 获取 js的地址,  例如 https://documentserver/web-apps/apps/api/documents/api.js
+     */
+    private String docServiceApi;
+    private String tempStorageUrl;
+    private String converterUrl;
+    private String preloaderUrl;
+
+
+    /**
      * The document section allows to change all the parameters pertaining to the document (title, url, file type, etc.).
      */
     private Document document = new Document();
@@ -105,6 +114,42 @@ public class Configuration {
 
     public Configuration setWidth(String width) {
         this.width = width;
+        return this;
+    }
+
+    public String getDocServiceApi() {
+        return docServiceApi;
+    }
+
+    public Configuration setDocServiceApi(String docServiceApi) {
+        this.docServiceApi = docServiceApi;
+        return this;
+    }
+
+    public String getTempStorageUrl() {
+        return tempStorageUrl;
+    }
+
+    public Configuration setTempStorageUrl(String tempStorageUrl) {
+        this.tempStorageUrl = tempStorageUrl;
+        return this;
+    }
+
+    public String getConverterUrl() {
+        return converterUrl;
+    }
+
+    public Configuration setConverterUrl(String converterUrl) {
+        this.converterUrl = converterUrl;
+        return this;
+    }
+
+    public String getPreloaderUrl() {
+        return preloaderUrl;
+    }
+
+    public Configuration setPreloaderUrl(String preloaderUrl) {
+        this.preloaderUrl = preloaderUrl;
         return this;
     }
 }

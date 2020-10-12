@@ -7,8 +7,15 @@ import com.github.onlyofficehelper.ds.config.Configuration;
  * 配置文件构建器 ,构建一个 {@link Configuration}
  * </p>
  *
- * @author EricChen 2020/09/24 12:09
+ * @author EricChen
  * @see Configuration
  */
-public class ConfigurationBuilder {
+public interface ConfigurationBuilder extends RefreshableBuilder {
+
+    /**
+     * 使用默认配置文件路径 , 构建一个 {@link Configuration}
+     *
+     * @return Configuration
+     */
+    Configuration build();
 }

@@ -37,12 +37,4 @@ public abstract class KeyRegistrySupport<T> implements KeyRegistry<T>, KeyGenera
     public String register(T source) {
         return documentKeyMap.putIfAbsent(source, generateKey());
     }
-
-    /**
-     * 生成Key
-     *
-     * @return 生成key
-     */
-    @Override
-    public abstract String generateKey();
 }

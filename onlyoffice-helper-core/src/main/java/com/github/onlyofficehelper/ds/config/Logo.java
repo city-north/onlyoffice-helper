@@ -1,5 +1,7 @@
 package com.github.onlyofficehelper.ds.config;
 
+import com.github.onlyofficehelper.annotation.OnlyOfficeConfig;
+
 /**
  * <p>
  * Changes the image file at the top left corner of the Editor header. The recommended image height is 20 pixels
@@ -7,7 +9,14 @@ package com.github.onlyofficehelper.ds.config;
  *
  * @author EricChen 2020/03/05 23:29
  */
+@OnlyOfficeConfig(prefix = Logo.PREFIX)
 public class Logo {
+    public static final String PREFIX = "onlyoffice.documentserver.customization.logo";
+
+    public static final String IMAGE = PREFIX + ".image";
+    public static final String IMAGE_EMBEDDED = PREFIX + ".imageEmbedded";
+    public static final String URL = PREFIX + ".url";
+
 
     /**
      * path to the image file used to show in common work mode (i.e. in view and edit modes for all editors). The image must have the following size: 172x40,
@@ -29,26 +38,23 @@ public class Logo {
         return image;
     }
 
-    public Logo setImage(String image) {
+    public void setImage(String image) {
         this.image = image;
-        return this;
     }
 
     public String getImageEmbedded() {
         return imageEmbedded;
     }
 
-    public Logo setImageEmbedded(String imageEmbedded) {
+    public void setImageEmbedded(String imageEmbedded) {
         this.imageEmbedded = imageEmbedded;
-        return this;
     }
 
     public String getUrl() {
         return url;
     }
 
-    public Logo setUrl(String url) {
+    public void setUrl(String url) {
         this.url = url;
-        return this;
     }
 }

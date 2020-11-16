@@ -1,5 +1,8 @@
 package com.github.onlyofficehelper.ds.config;
 
+import com.github.onlyofficehelper.annotation.OnlyOfficeConfig;
+import com.github.onlyofficehelper.json.Convertable;
+
 /**
  * <p>
  * The Configuration of OnlyOffice DocumentServer
@@ -8,7 +11,14 @@ package com.github.onlyofficehelper.ds.config;
  * @author EricChen 2020/02/25 00:08
  * @see <a href='https://api.onlyoffice.com/editors/basic'>official API of OnlyOffice Document Server</a>
  */
-public class Configuration {
+@OnlyOfficeConfig(prefix = Configuration.PREFIX)
+public class Configuration implements Convertable {
+    public static final String PREFIX = "onlyoffice.documentserver";
+
+    public static final String DOC_SERVICE_API = PREFIX + ".docServiceApi";
+    public static final String TEMP_STORAGE_URL = PREFIX + ".tempStorageUrl";
+    public static final String CONVERTER_URL = PREFIX + ".converterUrl";
+    public static final String PRELOADER_URL = PREFIX + ".preloaderUrl";
 
     /**
      * documentServer 获取 js的地址,  例如 https://documentserver/web-apps/apps/api/documents/api.js
@@ -26,7 +36,7 @@ public class Configuration {
     /**
      * The editorConfig section allows to change the parameters pertaining to the editor interface: opening mode (viewer or editor), interface language, additional buttons, etc.).
      */
-    private Editor editor = new Editor();
+    private Editor editorConfig = new Editor();
     /**
      * Defines the document type to be opened: open a text document
      * (.doc, .docm, .docx, .dot, .dotm, .dotx, .epub, .fodt, .htm, .html, .mht, .odt, .ott, .pdf, .rtf, .txt, .djvu, .xps)
@@ -54,102 +64,91 @@ public class Configuration {
      */
     private String width;
 
-    public Document getDocument() {
-        return document;
-    }
-
-    public Configuration setDocument(Document document) {
-        this.document = document;
-        return this;
-    }
-
-    public Editor getEditor() {
-        return editor;
-    }
-
-    public Configuration setEditor(Editor editor) {
-        this.editor = editor;
-        return this;
-    }
-
-    public String getDocumentType() {
-        return documentType;
-    }
-
-    public Configuration setDocumentType(String documentType) {
-        this.documentType = documentType;
-        return this;
-    }
-
-    public String getHeight() {
-        return height;
-    }
-
-    public Configuration setHeight(String height) {
-        this.height = height;
-        return this;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public Configuration setToken(String token) {
-        this.token = token;
-        return this;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public Configuration setType(String type) {
-        this.type = type;
-        return this;
-    }
-
-    public String getWidth() {
-        return width;
-    }
-
-    public Configuration setWidth(String width) {
-        this.width = width;
-        return this;
-    }
-
     public String getDocServiceApi() {
         return docServiceApi;
     }
 
-    public Configuration setDocServiceApi(String docServiceApi) {
+    public void setDocServiceApi(String docServiceApi) {
         this.docServiceApi = docServiceApi;
-        return this;
     }
 
     public String getTempStorageUrl() {
         return tempStorageUrl;
     }
 
-    public Configuration setTempStorageUrl(String tempStorageUrl) {
+    public void setTempStorageUrl(String tempStorageUrl) {
         this.tempStorageUrl = tempStorageUrl;
-        return this;
     }
 
     public String getConverterUrl() {
         return converterUrl;
     }
 
-    public Configuration setConverterUrl(String converterUrl) {
+    public void setConverterUrl(String converterUrl) {
         this.converterUrl = converterUrl;
-        return this;
     }
 
     public String getPreloaderUrl() {
         return preloaderUrl;
     }
 
-    public Configuration setPreloaderUrl(String preloaderUrl) {
+    public void setPreloaderUrl(String preloaderUrl) {
         this.preloaderUrl = preloaderUrl;
-        return this;
+    }
+
+    public Document getDocument() {
+        return document;
+    }
+
+    public void setDocument(Document document) {
+        this.document = document;
+    }
+
+    public Editor getEditorConfig() {
+        return editorConfig;
+    }
+
+    public void setEditorConfig(Editor editorConfig) {
+        this.editorConfig = editorConfig;
+    }
+
+    public String getDocumentType() {
+        return documentType;
+    }
+
+    public void setDocumentType(String documentType) {
+        this.documentType = documentType;
+    }
+
+    public String getHeight() {
+        return height;
+    }
+
+    public void setHeight(String height) {
+        this.height = height;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    public String getWidth() {
+        return width;
+    }
+
+    public void setWidth(String width) {
+        this.width = width;
     }
 }

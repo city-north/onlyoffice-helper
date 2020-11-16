@@ -1,5 +1,7 @@
 package com.github.onlyofficehelper.ds.config;
 
+import com.github.onlyofficehelper.annotation.OnlyOfficeConfig;
+
 /**
  * <p>
  * The document info section allows to change additional parameters for the document (document owner, folder where the document is stored, uploading date, sharing settings).
@@ -8,7 +10,14 @@ package com.github.onlyofficehelper.ds.config;
  * @author EricChen 2020/03/05 22:47
  * @see <a href='https://api.onlyoffice.com/editors/config/document/info'>official API</a>
  */
+@OnlyOfficeConfig(prefix = Info.PREFIX)
 public class Info {
+    public static final String PREFIX = "onlyoffice.documentserver.document.info";
+    public static final String AUTHOR = PREFIX + ".author";
+    public static final String CREATED = PREFIX + ".created";
+    public static final String FOLDER = PREFIX + ".folder";
+    public static final String OWNER = PREFIX + ".owner";
+    public static final String UPLOADED = PREFIX + ".uploaded";
 
     /**
      * Defines the name of the document author/creator. Deprecated since version 5.4, please use owner instead.
@@ -44,44 +53,39 @@ public class Info {
         return author;
     }
 
-    public Info setAuthor(String author) {
+    public void setAuthor(String author) {
         this.author = author;
-        return this;
     }
 
     public String getCreated() {
         return created;
     }
 
-    public Info setCreated(String created) {
+    public void setCreated(String created) {
         this.created = created;
-        return this;
     }
 
     public String getFolder() {
         return folder;
     }
 
-    public Info setFolder(String folder) {
+    public void setFolder(String folder) {
         this.folder = folder;
-        return this;
     }
 
     public String getOwner() {
         return owner;
     }
 
-    public Info setOwner(String owner) {
+    public void setOwner(String owner) {
         this.owner = owner;
-        return this;
     }
 
     public String getUploaded() {
         return uploaded;
     }
 
-    public Info setUploaded(String uploaded) {
+    public void setUploaded(String uploaded) {
         this.uploaded = uploaded;
-        return this;
     }
 }

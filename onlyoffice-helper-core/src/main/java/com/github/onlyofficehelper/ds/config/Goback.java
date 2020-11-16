@@ -1,5 +1,7 @@
 package com.github.onlyofficehelper.ds.config;
 
+import com.github.onlyofficehelper.annotation.OnlyOfficeConfig;
+
 /**
  * <p>
  * Defines settings for the Go to Documents menu button and upper right corner button.
@@ -7,7 +9,13 @@ package com.github.onlyofficehelper.ds.config;
  *
  * @author EricChen 2020/03/05 23:33
  */
+@OnlyOfficeConfig(prefix = Goback.PREFIX)
 public class Goback {
+    public static final String PREFIX = "onlyoffice.documentserver.editor.customization.goback";
+
+    public static final String BLANK = PREFIX + ".blank";
+    public static final String TEXT = PREFIX + ".text";
+    public static final String URL = PREFIX + ".url";
 
     /**
      * open the website in the new browser tab/window (if the value is set to true)

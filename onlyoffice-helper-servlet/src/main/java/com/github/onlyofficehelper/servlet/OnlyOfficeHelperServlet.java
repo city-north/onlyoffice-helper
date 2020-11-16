@@ -1,8 +1,8 @@
 package com.github.onlyofficehelper.servlet;
 
 
-import com.github.onlyofficehelper.ds.builder.ConfigurationBuilder;
-import com.github.onlyofficehelper.ds.builder.PropertiesConfigurationBuilder;
+import com.github.onlyofficehelper.ds.builder.ConfigurationReader;
+import com.github.onlyofficehelper.ds.builder.PropertiesConfigurationReader;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -16,11 +16,11 @@ import javax.servlet.http.HttpServletResponse;
  * @author EricChen 2020/10/12 14:12
  */
 public class OnlyOfficeHelperServlet extends OnlyOfficeDispatcherServlet {
-    protected ConfigurationBuilder configurationBuilder;
+    protected ConfigurationReader configurationBuilder;
 
     @Override
     public void init() throws ServletException {
-        configurationBuilder = new PropertiesConfigurationBuilder();
+        configurationBuilder = new PropertiesConfigurationReader();
     }
 
     @Override

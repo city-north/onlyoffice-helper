@@ -2,12 +2,12 @@ package com.github.onlyofficehelper.ds.builder;
 
 /**
  * <p>
- * description
+ * 可刷新读取器抽象
  * </p>
  *
  * @author EricChen
  */
-public interface RefreshableBuilder {
+public interface RefreshableReader {
 
     /**
      * 刷新配置文件

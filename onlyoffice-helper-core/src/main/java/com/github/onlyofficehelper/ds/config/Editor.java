@@ -1,5 +1,7 @@
 package com.github.onlyofficehelper.ds.config;
 
+import com.github.onlyofficehelper.annotation.OnlyOfficeConfig;
+
 import java.util.List;
 
 /**
@@ -10,7 +12,15 @@ import java.util.List;
  * @author EricChen 2020/02/25 00:14
  * @see <a href='https://api.onlyoffice.com/editors/config/editor'>official API</a>
  */
+@OnlyOfficeConfig(prefix = Editor.PREFIX)
 public class Editor {
+    public static final String PREFIX = "onlyoffice.documentserver.editor";
+    public static final String ACTIONLINK = PREFIX + ".actionLink";
+    public static final String CALLBACKURL = PREFIX + ".callbackUrl";
+    public static final String CREATEURL = PREFIX + ".createUrl";
+    public static final String LANG = PREFIX + ".lang";
+    public static final String MODE = PREFIX + ".mode";
+
 
     /**
      * Specifies the data received from the document editing service using the onMakeActionLink event,
@@ -69,80 +79,71 @@ public class Editor {
         return actionLink;
     }
 
-    public Editor setActionLink(String actionLink) {
+    public void setActionLink(String actionLink) {
         this.actionLink = actionLink;
-        return this;
     }
 
     public String getCallbackUrl() {
         return callbackUrl;
     }
 
-    public Editor setCallbackUrl(String callbackUrl) {
+    public void setCallbackUrl(String callbackUrl) {
         this.callbackUrl = callbackUrl;
-        return this;
     }
 
     public String getCreateUrl() {
         return createUrl;
     }
 
-    public Editor setCreateUrl(String createUrl) {
+    public void setCreateUrl(String createUrl) {
         this.createUrl = createUrl;
-        return this;
     }
 
     public String getLang() {
         return lang;
     }
 
-    public Editor setLang(String lang) {
+    public void setLang(String lang) {
         this.lang = lang;
-        return this;
     }
 
     public String getMode() {
         return mode;
     }
 
-    public Editor setMode(String mode) {
+    public void setMode(String mode) {
         this.mode = mode;
-        return this;
     }
 
     public List<Recent> getRecent() {
         return recent;
     }
 
-    public Editor setRecent(List<Recent> recent) {
+    public void setRecent(List<Recent> recent) {
         this.recent = recent;
-        return this;
     }
 
     public Customization getCustomization() {
         return customization;
     }
 
-    public Editor setCustomization(Customization customization) {
+    public void setCustomization(Customization customization) {
         this.customization = customization;
-        return this;
     }
 
     public Embedded getEmbedded() {
         return embedded;
     }
 
-    public Editor setEmbedded(Embedded embedded) {
+    public void setEmbedded(Embedded embedded) {
         this.embedded = embedded;
-        return this;
     }
 
     public Plugins getPlugins() {
         return plugins;
     }
 
-    public Editor setPlugins(Plugins plugins) {
+    public void setPlugins(Plugins plugins) {
         this.plugins = plugins;
-        return this;
     }
 }

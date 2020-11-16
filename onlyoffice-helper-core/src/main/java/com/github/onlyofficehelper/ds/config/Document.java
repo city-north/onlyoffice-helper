@@ -1,5 +1,7 @@
 package com.github.onlyofficehelper.ds.config;
 
+import com.github.onlyofficehelper.annotation.OnlyOfficeConfig;
+
 /**
  * <p>
  * The document section allows to change all the parameters pertaining to the document (title, url, file type, etc.).
@@ -8,7 +10,13 @@ package com.github.onlyofficehelper.ds.config;
  * @author EricChen 2020/02/25 00:13
  * @see <a href='https://api.onlyoffice.com/editors/config/document'>official API</a>
  */
+@OnlyOfficeConfig(prefix = Document.PREFIX)
 public class Document {
+    public static final String PREFIX = "onlyoffice.documentserver.document";
+    public static final String FILE_TYPE = PREFIX + ".fileType";
+    public static final String KEY = PREFIX + ".key";
+    public static final String TITLE = PREFIX + ".title";
+    public static final String URL = PREFIX + ".url";
 
     /**
      * Defines the type of the file for the source viewed or edited document.
@@ -51,36 +59,32 @@ public class Document {
         return fileType;
     }
 
-    public Document setFileType(String fileType) {
+    public void setFileType(String fileType) {
         this.fileType = fileType;
-        return this;
     }
 
     public String getKey() {
         return key;
     }
 
-    public Document setKey(String key) {
+    public void setKey(String key) {
         this.key = key;
-        return this;
     }
 
     public String getTitle() {
         return title;
     }
 
-    public Document setTitle(String title) {
+    public void setTitle(String title) {
         this.title = title;
-        return this;
     }
 
     public String getUrl() {
         return url;
     }
 
-    public Document setUrl(String url) {
+    public void setUrl(String url) {
         this.url = url;
-        return this;
     }
 
     public Info getInfo() {
@@ -98,6 +102,4 @@ public class Document {
     public void setPermissions(Permissions permissions) {
         this.permissions = permissions;
     }
-
-
 }

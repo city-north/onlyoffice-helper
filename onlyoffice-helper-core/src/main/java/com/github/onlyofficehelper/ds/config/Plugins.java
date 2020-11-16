@@ -1,5 +1,7 @@
 package com.github.onlyofficehelper.ds.config;
 
+import com.github.onlyofficehelper.annotation.OnlyOfficeConfig;
+
 /**
  * <p>
  * The plugins section allows to connect the special add-ons to your Document Server installation which will help you add additional features to document editors.
@@ -7,7 +9,15 @@ package com.github.onlyofficehelper.ds.config;
  *
  * @author EricChen 2020/03/05 23:15
  */
+@OnlyOfficeConfig(prefix = Plugins.PREFIX)
 public class Plugins {
+
+    public static final String PREFIX = "onlyoffice.documentserver.editor.plugins";
+
+    public static final String AUTOSTART = PREFIX + ".autostart";
+    public static final String PLUGINS_DATA = PREFIX + ".pluginsData";
+    public static final String URL = PREFIX + ".url";
+
 
     /**
      * Defines the array of the identifiers (as entered in config.json) for the plugins,
@@ -30,26 +40,23 @@ public class Plugins {
         return autostart;
     }
 
-    public Plugins setAutostart(String[] autostart) {
+    public void setAutostart(String[] autostart) {
         this.autostart = autostart;
-        return this;
     }
 
     public String[] getPluginsData() {
         return pluginsData;
     }
 
-    public Plugins setPluginsData(String[] pluginsData) {
+    public void setPluginsData(String[] pluginsData) {
         this.pluginsData = pluginsData;
-        return this;
     }
 
     public String getUrl() {
         return url;
     }
 
-    public Plugins setUrl(String url) {
+    public void setUrl(String url) {
         this.url = url;
-        return this;
     }
 }

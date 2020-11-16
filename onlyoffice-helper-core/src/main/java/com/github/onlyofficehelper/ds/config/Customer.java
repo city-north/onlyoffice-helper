@@ -1,5 +1,7 @@
 package com.github.onlyofficehelper.ds.config;
 
+import com.github.onlyofficehelper.annotation.OnlyOfficeConfig;
+
 /**
  * <p>
  * Contains the information which will be displayed int the editor About section and visible to all the editor users.
@@ -7,7 +9,18 @@ package com.github.onlyofficehelper.ds.config;
  *
  * @author EricChen 2020/03/05 23:25
  */
+@OnlyOfficeConfig(prefix = Customer.PREFIX)
 public class Customer {
+
+    public static final String PREFIX = "onlyoffice.documentserver.editor.customization.customer";
+
+    public static final String ADDRESS = PREFIX + ".address";
+    public static final String INFO = PREFIX + ".info";
+    public static final String LOGO = PREFIX + ".logo";
+    public static final String MAIL = PREFIX + ".mail";
+    public static final String NAME = PREFIX + ".name";
+    public static final String WWW = PREFIX + ".www";
+
 
     /**
      * postal address of the company or person who gives access to the editors or the editor authors
@@ -39,53 +52,47 @@ public class Customer {
         return address;
     }
 
-    public Customer setAddress(String address) {
+    public void setAddress(String address) {
         this.address = address;
-        return this;
     }
 
     public String getInfo() {
         return info;
     }
 
-    public Customer setInfo(String info) {
+    public void setInfo(String info) {
         this.info = info;
-        return this;
     }
 
     public String getLogo() {
         return logo;
     }
 
-    public Customer setLogo(String logo) {
+    public void setLogo(String logo) {
         this.logo = logo;
-        return this;
     }
 
     public String getMail() {
         return mail;
     }
 
-    public Customer setMail(String mail) {
+    public void setMail(String mail) {
         this.mail = mail;
-        return this;
     }
 
     public String getName() {
         return name;
     }
 
-    public Customer setName(String name) {
+    public void setName(String name) {
         this.name = name;
-        return this;
     }
 
     public String getWww() {
         return www;
     }
 
-    public Customer setWww(String www) {
+    public void setWww(String www) {
         this.www = www;
-        return this;
     }
 }

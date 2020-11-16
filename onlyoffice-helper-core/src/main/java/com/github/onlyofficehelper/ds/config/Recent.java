@@ -1,5 +1,7 @@
 package com.github.onlyofficehelper.ds.config;
 
+import com.github.onlyofficehelper.annotation.OnlyOfficeConfig;
+
 /**
  * <p>
  * Defines the user currently viewing or editing the document:
@@ -7,7 +9,15 @@ package com.github.onlyofficehelper.ds.config;
  *
  * @author EricChen 2020/03/05 23:12
  */
+@OnlyOfficeConfig(prefix = Recent.PREFIX)
 public class Recent {
+
+    public static final String PREFIX = "onlyoffice.documentserver.editor.recent";
+
+    public static final String NAME = PREFIX + ".name";
+    public static final String FIRSTNAME = PREFIX + ".firstname";
+    public static final String LASTNAME = PREFIX + ".lastName";
+    public static final String ID = PREFIX + ".id";
 
     /**
      * the full name of the user. Used since version 4.2,
@@ -33,35 +43,31 @@ public class Recent {
         return name;
     }
 
-    public Recent setName(String name) {
+    public void setName(String name) {
         this.name = name;
-        return this;
     }
 
     public String getFirstname() {
         return firstname;
     }
 
-    public Recent setFirstname(String firstname) {
+    public void setFirstname(String firstname) {
         this.firstname = firstname;
-        return this;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public Recent setLastName(String lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
-        return this;
     }
 
     public String getId() {
         return id;
     }
 
-    public Recent setId(String id) {
+    public void setId(String id) {
         this.id = id;
-        return this;
     }
 }

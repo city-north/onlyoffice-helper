@@ -1,5 +1,7 @@
 package com.github.onlyofficehelper.ds.config;
 
+import com.github.onlyofficehelper.annotation.OnlyOfficeConfig;
+
 /**
  * <p>
  * The embedded section is for the embedded document type only (see the config section to find out how to define the embedded document type).
@@ -8,7 +10,16 @@ package com.github.onlyofficehelper.ds.config;
  *
  * @author EricChen 2020/03/05 23:14
  */
+@OnlyOfficeConfig(prefix = Embedded.PREFIX)
 public class Embedded {
+    public static final String PREFIX = "onlyoffice.documentserver.editor.embedded";
+
+    public static final String EMBED_URL = PREFIX + ".embedUrl";
+    public static final String FULL_SCREEN_URL = PREFIX + ".fullscreenUrl";
+    public static final String SAVE_URL = PREFIX + ".saveUrl";
+    public static final String SHARE_URL = PREFIX + ".shareUrl";
+    public static final String TOOLBAR_DOCKED = PREFIX + ".toolbarDocked";
+
 
     /**
      * Defines the absolute URL to the document serving as a source file for the document embedded into the web page.
@@ -36,44 +47,39 @@ public class Embedded {
         return embedUrl;
     }
 
-    public Embedded setEmbedUrl(String embedUrl) {
+    public void setEmbedUrl(String embedUrl) {
         this.embedUrl = embedUrl;
-        return this;
     }
 
     public String getFullscreenUrl() {
         return fullscreenUrl;
     }
 
-    public Embedded setFullscreenUrl(String fullscreenUrl) {
+    public void setFullscreenUrl(String fullscreenUrl) {
         this.fullscreenUrl = fullscreenUrl;
-        return this;
     }
 
     public String getSaveUrl() {
         return saveUrl;
     }
 
-    public Embedded setSaveUrl(String saveUrl) {
+    public void setSaveUrl(String saveUrl) {
         this.saveUrl = saveUrl;
-        return this;
     }
 
     public String getShareUrl() {
         return shareUrl;
     }
 
-    public Embedded setShareUrl(String shareUrl) {
+    public void setShareUrl(String shareUrl) {
         this.shareUrl = shareUrl;
-        return this;
     }
 
     public String getToolbarDocked() {
         return toolbarDocked;
     }
 
-    public Embedded setToolbarDocked(String toolbarDocked) {
+    public void setToolbarDocked(String toolbarDocked) {
         this.toolbarDocked = toolbarDocked;
-        return this;
     }
 }

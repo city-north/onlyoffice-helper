@@ -1,5 +1,7 @@
 package com.github.onlyofficehelper.ds.config;
 
+import com.github.onlyofficehelper.annotation.OnlyOfficeConfig;
+
 /**
  * <p>
  * The document permission section allows to change the permission for the document to be edited and downloaded or not.
@@ -8,7 +10,18 @@ package com.github.onlyofficehelper.ds.config;
  * @author EricChen 2020/03/05 22:51
  * @see <a href='https://api.onlyoffice.com/editors/config/document/permissions'>official API</a>
  */
+@OnlyOfficeConfig(prefix = Permissions.PREFIX)
 public class Permissions {
+
+    public static final String PREFIX = "onlyoffice.docservice.document.permissions";
+
+    public static String COMMENT = ".comment";
+    public static String DOWNLOAD = ".download";
+    public static String EDIT = ".edit";
+    public static String PRINT = ".print";
+    public static String FILL_FORMS = ".fillForms";
+    public static String REVIEW = ".review";
+
 
     /**
      * Defines if the document can be commented or not.
@@ -67,60 +80,51 @@ public class Permissions {
      */
     private boolean review;
 
-    /**
-     * @return
-     */
     public boolean isComment() {
         return comment;
     }
 
-    public Permissions setComment(boolean comment) {
+    public void setComment(boolean comment) {
         this.comment = comment;
-        return this;
     }
 
     public boolean isDownload() {
         return download;
     }
 
-    public Permissions setDownload(boolean download) {
+    public void setDownload(boolean download) {
         this.download = download;
-        return this;
     }
 
     public boolean isEdit() {
         return edit;
     }
 
-    public Permissions setEdit(boolean edit) {
+    public void setEdit(boolean edit) {
         this.edit = edit;
-        return this;
     }
 
     public boolean isPrint() {
         return print;
     }
 
-    public Permissions setPrint(boolean print) {
+    public void setPrint(boolean print) {
         this.print = print;
-        return this;
     }
 
     public boolean isFillForms() {
         return fillForms;
     }
 
-    public Permissions setFillForms(boolean fillForms) {
+    public void setFillForms(boolean fillForms) {
         this.fillForms = fillForms;
-        return this;
     }
 
     public boolean isReview() {
         return review;
     }
 
-    public Permissions setReview(boolean review) {
+    public void setReview(boolean review) {
         this.review = review;
-        return this;
     }
 }
